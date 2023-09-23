@@ -21,10 +21,7 @@ const chatContainer = document.getElementById('chat-container');
 
 const BOT_ENDPOINT = 'http://localhost:8000/v1';
 
-const messages = [{
-    role: 'system',
-    content: "Answer short and concise in 200 tokens only."
-}];
+const messages = [];
 
 function renderMessages() {
     chatContainer.innerHTML = '';
@@ -62,7 +59,7 @@ async function sendMessage() {
             body: JSON.stringify({
                 messages: messages,
                 temperature: 0.9,
-                max_tokens: 200,
+                max_tokens: 1000,
             }),
         });
 
